@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moon Light | Downloads</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #000;
+    color: #fff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    border-bottom: 1px solid #111;
+}
+
+header h1 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+nav a {
+    color: #888;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #fff;
+}
+
+section {
+    padding: 120px 10%;
+    max-width: 800px;
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.download-item {
+    margin-bottom: 30px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.download-item.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.download-item p {
+    color: #aaa;
+}
+
+.download-item a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: 1px solid #333;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.download-item a:hover {
+    background: #111;
+    border-color: #777;
+}
+
+footer {
+    padding: 30px 10%;
+    border-top: 1px solid #111;
+    color: #555;
+    font-size: 14px;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Moon Light</h1>
+    <nav>
+        <a href="index.html">About</a>
+        <a href="downloads.html">Downloads</a>
+    </nav>
+</header>
+
+<section>
+    <h2>Downloads</h2>
+
+    <div class="download-item">
+        <p>Project 1</p>
+        <a href="#">Download</a>
+    </div>
+
+    <div class="download-item">
+        <p>Project 2</p>
+        <a href="#">Download</a>
+    </div>
+
+    <div class="download-item">
+        <p>Project 3</p>
+        <a href="#">Download</a>
+    </div>
+</section>
+
+<footer>
+    © 2026 Moon Light
+</footer>
+
+<script>
+const items = document.querySelectorAll('.download-item');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+});
+
+items.forEach(item => observer.observe(item));
+</script>
+
+</body>
+</html>

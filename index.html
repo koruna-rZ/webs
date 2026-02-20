@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moon Light | About</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #000;
+    color: #fff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    border-bottom: 1px solid #111;
+}
+
+header h1 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+nav a {
+    color: #888;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #fff;
+}
+
+section {
+    padding: 120px 10%;
+    max-width: 800px;
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #aaa;
+    line-height: 1.6;
+}
+
+/* Animation */
+.fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.fade-up.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+footer {
+    padding: 30px 10%;
+    border-top: 1px solid #111;
+    color: #555;
+    font-size: 14px;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Moon Light</h1>
+    <nav>
+        <a href="index.html">About</a>
+        <a href="downloads.html">Downloads</a>
+    </nav>
+</header>
+
+<section>
+    <div class="fade-up">
+        <h2>About Me</h2>
+        <p>
+            Hello. I'm a developer focused on clean, minimal design.
+            I build simple, efficient, and modern projects.
+        </p>
+    </div>
+</section>
+
+<footer>
+    © 2026 Moon Light
+</footer>
+
+<script>
+const elements = document.querySelectorAll('.fade-up');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+});
+
+elements.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
